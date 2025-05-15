@@ -350,3 +350,23 @@ footer p {
     display: none;
   }
 }
+#accueil {
+  position: relative;
+  background: radial-gradient(circle, #24246e, #06051f);
+  color: white;
+  padding: 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.message-discret-accueil {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  user-select: none;
+  pointer-events: none; /* pour que ça ne gêne pas les clics */
+  z-index: 10;
+}
