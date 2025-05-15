@@ -11,7 +11,8 @@
 <body>
 <header>
     <div class="header-container">
-        <div class="header-left"></div> <!-- vide pour équilibrer -->
+        <div class="header-left">
+        </div> <!-- vide pour équilibrer -->
         <nav class="header-center">
             <ul>
                 <li><a href="#accueil">Accueil</a></li>
@@ -33,6 +34,7 @@
 
 
 <section id="accueil">
+  <div class="message-discret-accueil">Site créé avec HTML + CSS</div>
     <h1>Bienvenue</h1>
     <p>Je suis un passionné de data, orienté solutions et curieux par nature.</p>
     <button onclick="document.getElementById('competences').scrollIntoView({behavior: 'smooth'});">Voir mes compétences</button>
@@ -51,6 +53,11 @@
     <span class="bubble html">HTML</span>
     <span class="bubble css">CSS</span>
     <span class="bubble grey">IA</span>
+    <div class="competence-bubbles">
+  <!-- tes autres bulles ici -->
+  <span class="bubble html-css">HTML + CSS</span>
+</div>
+
   </div>
 </section>
 
