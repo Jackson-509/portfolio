@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header>
+    <div class="header-container">
+        <div class="header-left"></div> <!-- vide pour équilibrer -->
+        <nav class="header-center">
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+                <a href="https://www.linkedin.com/in/jackson-aristil" target="_blank">
+                    <img src="C:\Users\arist\Documents\mon-portfolio\img_source\LI-Logo.png" alt="LinkedIn" class="linkedin-logo" style="height: 30px; width: 100px;">
+                </a>
+            <span class="nom-utilisateur">Jackson Aristil</span>
+            <img src="C:\Users\arist\Documents\mon-portfolio\img_source\Jackson_photo_profil.png" alt="Photo de profil" class="photo-profil">
+        </div>
+    </div>
+</header>
+
+
+
+<section id="accueil">
+    <h1>Bienvenue</h1>
+    <p>Je suis un passionné de data, orienté solutions et curieux par nature.</p>
+    <button onclick="document.getElementById('competences').scrollIntoView({behavior: 'smooth'});">Voir mes compétences</button>
+</section>
+
+    <section id="competences">
+    <h2>Compétences</h2>
+    <div class="competence-bubbles">
+        <span class="bubble excel">Excel VBA</span>
+        <span class="bubble powerbi">Power BI</span>
+        <span class="bubble sql">SQL</span>
+        <span class="bubble python">Python</span>
+        <span class="bubble cleaning">Data cleaning</span>
+        <span class="bubble reporting">Reporting automatisé</span>
+    </div>
+</section>
+
+
+<!-- Section Projets -->
+<section id="projets">
+    <h2>Mes Projets</h2>
+    <div class="projets-container">
+        <div class="projet">
+            <img src="C:\Users\arist\Documents\mon-portfolio\img_source\1747064964_img_3.jpg" alt="Projet 1">
+            <div class="projet-info">
+                <h3>Power Bi Dashboard</h3>
+                <p>Création de d'indicateurs clés. automatiser le reporting et visualisation claire dans des dashboards interactifs. L’objectif : fournir aux équipes une vision instantanée de la performance commerciale.</p>
+                <p>loren ipsum</p>
+            </div>
+        </div>
+        <div class="projet">
+            <img src="C:\Users\arist\Documents\mon-portfolio\img_source\Excel_mac_img_0.jpg" alt="Projet 2">
+            <div class="projet-info">
+                <h3>Excel</h3>
+                <p>Automatisation des taches réccurrentes</p>
+                <p>VBA / Power Query</p>
+            </div>
+        </div>
+        <div class="projet">
+            <img src="C:\Users\arist\Documents\mon-portfolio\img_source\power-automate-microsoft-1.jpg" alt="Projet 3">
+            <div class="projet-info">
+                <h3>Power Automate</h3>
+                <p>Automatisation des tâches récurrentes</p>
+                <p>Pour optimiser les processus métiers, j’utilise Power Automate afin de créer des flux automatisés entre les outils Microsoft (Outlook, SharePoint, Teams, etc.)</p>
+            </div>
+        </div>
+        <!-- Nouvelle tuile ajoutée -->
+        <div class="projet">
+            <img src="image4.jpg" alt="Projet 4">
+            <div class="projet-info">
+                <h3>Optimisation des Processus</h3>
+                <p>Amélioration des processus internes avec automatisation</p>
+                <p>Durée : 6 mois</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Envie de collaborer ? Envoie-moi un message !</p>
+        <form action="mailto:info.aristil.jackson@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="nom" placeholder="Nom" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mon Portfolio - Tous droits réservés.</p>
+    </footer>
+</body>
+
+</html>
