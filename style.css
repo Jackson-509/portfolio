@@ -2,319 +2,301 @@
 * {
   box-sizing: border-box;
 }
-body {
-  margin: 0;
-  overflow-x: hidden;
-}
 
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Structure à 3 colonnes */
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-    background-color: #f8f8f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #f8f8f8;
 }
 
 .header-left,
 .header-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px; /* espace entre le nom et la photo */
-    flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
 }
 
 .nom-utilisateur {
-    font-weight: bold;
-    font-size: 1rem;
-    color: #333;
-    white-space: nowrap; /* évite que le nom passe à la ligne */
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+  white-space: nowrap;
 }
 
 .photo-profil {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .header-center {
-    flex: 2;
-    display: flex;
-    justify-content: center;
+  flex: 2;
+  display: flex;
+  justify-content: center;
 }
 
-/* Menu centré */
 .header-center ul {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .header-center ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
+.header-center ul li a:hover {
+  color: #f44336;
+  text-decoration: underline;
+}
+
+/* Section Accueil */
 #accueil {
   position: relative;
-  background: radial-gradient(circle, #24246e, #06051f); /* Fond dégradé de la section */
+  background: radial-gradient(circle, #24246e, #06051f);
   color: white;
   padding: 40px;
   text-align: center;
-  overflow: hidden; /* Empêche les bulles de déborder */
+  overflow: hidden;
 }
 
-.competence-bubbles {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-}
-
-/* Style pour le bouton, s'assurant qu'il reste au-dessus des bulles */
-button {
-  position: relative;
-  z-index: 1; /* Le bouton sera devant les bulles */
-  padding: 10px 20px;
-  background-color: #2185bf;
+#accueil button {
+  padding: 10px 25px;
+  background-color: #f44336;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  z-index: 1;
+  position: relative;
   transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #1a7a9c;
+#accueil button:hover {
+  background-color: #e53935;
 }
 
-#accueil button {
-    padding: 10px 25px;
-    background-color: #f44336; /* Fond rouge */
-    color: white; /* Texte blanc */
-    border: none; /* Pas de bordure */
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Section Compétences */
+/* Compétences */
 #competences {
-    padding: 20px 10px; /* Réduit le padding vertical */
-    background-color: white;
-    text-align: center;
+  padding: 20px 10px;
+  background-color: white;
+  text-align: center;
 }
 
 #competences h2 {
-    font-size: 28px; /* Réduit légèrement la taille du titre */
-    margin-bottom: 15px; /* Moins d'espace sous le titre */
+  font-size: 28px;
+  margin-bottom: 15px;
 }
 
 #competences p {
-    font-size: 16px; /* Taille de texte réduite */
-    margin-bottom: 20px; /* Réduit l'espace sous le paragraphe */
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
-/* Section Projets */
-#projets {
-    background-color: #f4f4f4;
-    padding: 10px 20px; /* Réduit le padding vertical à 10px */
-    text-align: center;
+.competence-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
 }
 
-#projets h2 {
-    font-size: 30px;
-    margin-bottom: 30px;
-}
-
-.projets-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Disposition en grille, responsive */
-    gap: 20px;
-}
-
-.projet {
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    border-radius: 10px;
-}
-
-.projet:hover {
-    transform: translateY(-10px);
-}
-
-.projet img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.projet-info {
-    margin-top: 20px;
-    text-align: left;
-}
-
-.projet-info h3 {
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.projet-info p {
-    font-size: 16px;
-    color: #777;
-}
-
-/* Contact */
-#contact {
-    padding: 60px 20px;
-    background-color: white;
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 30px;
-    margin-bottom: 30px;
-}
-
-#contact form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-#contact input,
-#contact textarea {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#contact button {
-    padding: 10px 30px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-#contact button:hover {
-    background-color: #e53935;
-}
-
-/* Footer */
-footer {
-    background-color: #2e3b4e;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-footer p {
-    margin: 0;
-    font-size: 16px;
-}
-
-/* Styles spécifiques pour les compétences */
 .bubble {
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: default;
-    background-color: white;
-    border: 2px solid;
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: white;
+  border: 2px solid;
+  cursor: default;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .bubble:hover {
-    transform: scale(1.1);
-    background-color: #f4f4f4;
+  transform: scale(1.1);
+  background-color: #f4f4f4;
 }
 
 /* Couleurs personnalisées */
 .excel {
-    color: #00BCD4;
-    border-color: #00BCD4;
+  color: #00BCD4;
+  border-color: #00BCD4;
 }
 
 .powerbi {
-    color: #3F51B5;
-    border-color: #3F51B5;
+  color: #3F51B5;
+  border-color: #3F51B5;
 }
 
 .sql {
-    color: #ff3be5;
-    border-color: #ff3be5;
+  color: #ff3be5;
+  border-color: #ff3be5;
 }
 
 .python {
-    color: #4CAF50;
-    border-color: #4CAF50;
+  color: #4CAF50;
+  border-color: #4CAF50;
 }
 
 .cleaning {
-    color: #607D8B;
-    border-color: #607D8B;
+  color: #607D8B;
+  border-color: #607D8B;
 }
 
 .reporting {
-    color: #FF5722;
-    border-color: #FF5722;
+  color: #FF5722;
+  border-color: #FF5722;
 }
+
+/* Projets */
+#projets {
+  background-color: #f4f4f4;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+#projets h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.projets-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.projet {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.projet:hover {
+  transform: translateY(-10px);
+}
+
+.projet img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.projet-info {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.projet-info h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.projet-info p {
+  font-size: 16px;
+  color: #777;
+}
+
+/* Contact */
+#contact {
+  padding: 60px 20px;
+  background-color: white;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#contact button {
+  padding: 10px 30px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+  background-color: #e53935;
+}
+
+/* Footer */
+footer {
+  background-color: #2e3b4e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Icône LinkedIn */
 .linkedin-logo {
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
-/* --- Ton CSS actuel --- */
-/* ...tout ton CSS ici (pas besoin de répéter) ... */
-
-/* Media query adaptée pour le header mobile classique */
+/* Responsive Header sans hamburger */
 @media (max-width: 600px) {
   .header-container {
     flex-direction: column;
     align-items: center;
   }
 
-  /* Ligne du haut : logo LinkedIn à gauche, nom au centre, photo à droite */
   .header-right {
     display: flex !important;
     flex-direction: row;
@@ -346,7 +328,6 @@ footer p {
     object-fit: cover;
   }
 
-  /* Menu en dessous */
   .header-center {
     order: 2;
     width: 100%;
@@ -360,7 +341,6 @@ footer p {
     display: flex;
   }
 
-  /* Cacher .header-left qui est vide */
   .header-left {
     display: none;
   }
