@@ -136,6 +136,11 @@ a {
   cursor: default;
   transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
+.grey {
+  color: #999;
+  border-color: #999;
+  background-color: #f0f0f0;
+}
 
 .bubble:hover {
   transform: scale(1.1);
