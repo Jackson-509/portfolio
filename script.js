@@ -1,68 +1,75 @@
-// script.js
-
-// Fonction pour faire défiler vers une section spécifique
+// --- Défilement fluide vers une section ---
 function scrollToSection(sectionId) {
   const section = document.getElementById(sectionId);
   if (section) {
     section.scrollIntoView({ behavior: 'smooth' });
   }
 }
+window.scrollToSection = scrollToSection;
 
-const modal = document.getElementById('modal-carousel');
-const projetBI = document.getElementById('projet-bi');
-const closeBtn = document.querySelector('.close-btn');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-const images = document.querySelectorAll('.carousel-img');
-let currentIndex = 0;
+// --- Gestion des modales carrousel multiples ---
+const carousels = {}; // Stocke l'index actif de chaque modale
 
-// Affiche l'image du carrousel selon l'index
-function showImage(index) {
+function openCarousel(id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+
+  modal.classList.remove('hidden');
+  carousels[id] = 0;
+  showImage(id, 0);
+}
+
+function closeCarousel(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.add('hidden');
+  }
+}
+
+function showImage(id, index) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+
+  const images = modal.querySelectorAll('.carousel-img');
+  if (!images.length) return;
+
+  index = (index + images.length) % images.length;
+  carousels[id] = index;
+
   images.forEach((img, i) => {
     img.classList.toggle('active', i === index);
+    img.style.display = i === index ? 'block' : 'none';
   });
 }
 
-// Ouvre la modale au clic sur le projet BI
-if (projetBI && modal && images.length > 0) {
-  projetBI.addEventListener('click', () => {
-    modal.classList.remove('hidden');
-    currentIndex = 0;
-    showImage(currentIndex);
-  });
+function nextSlide(id) {
+  showImage(id, carousels[id] + 1);
 }
 
-// Fermer la modale au clic sur la croix
-if (closeBtn && modal) {
-  closeBtn.addEventListener('click', () => {
-    modal.classList.add('hidden');
-  });
+function prevSlide(id) {
+  showImage(id, carousels[id] - 1);
 }
 
-// Bouton précédent du carrousel
-if (prevBtn) {
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
-  });
-}
+// --- Initialisation automatique des modales ---
+document.querySelectorAll('.modal').forEach(modal => {
+  const id = modal.id;
 
-// Bouton suivant du carrousel
-if (nextBtn) {
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  });
-}
+  // Bouton de fermeture
+  const closeBtn = modal.querySelector('.close-btn');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => closeCarousel(id));
+  }
 
-// Fermer modale au clic en dehors du contenu
-if (modal) {
+  // Boutons navigation
+  const prevBtn = modal.querySelector('.prev-btn');
+  const nextBtn = modal.querySelector('.next-btn');
+  if (prevBtn) prevBtn.addEventListener('click', () => prevSlide(id));
+  if (nextBtn) nextBtn.addEventListener('click', () => nextSlide(id));
+
+  // Clic en dehors du contenu
   modal.addEventListener('click', (e) => {
     if (e.target === modal) {
-      modal.classList.add('hidden');
+      closeCarousel(id);
     }
   });
-}
-
-// Export si besoin d'appeler depuis HTML inline
-window.scrollToSection = scrollToSection;
+});
