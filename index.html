@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mon Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -21,10 +21,10 @@
         </nav>
         <div class="header-right">
             <a href="https://www.linkedin.com/in/jackson-aristil" target="_blank">
-                <img src="image_source_portfolio/LI-Logo.png" alt="Logo LinkedIn" class="linkedin-logo" style="height: 30px; width: 100px;">
+                <img src="image_source_portfolio/LI-Logo.png" alt="Logo LinkedIn" class="linkedin-logo" style="height: 30px; width: 100px;" />
             </a>
             <span class="nom-utilisateur">Jackson Aristil</span>
-            <img src="image_source_portfolio/Jackson_photo_profil.png" alt="Photo de Jackson Aristil" class="photo-profil">
+            <img src="image_source_portfolio/Jackson_photo_profil.png" alt="Photo de Jackson Aristil" class="photo-profil" />
         </div>
     </div>
 </header>
@@ -57,7 +57,7 @@
     <h2>Mes Projets</h2>
     <div class="projets-container">
         <div class="projet">
-            <img src="image_source_portfolio/Python_excel_dashboard.png" alt="Aperçu du projet de SIRETisation avec Python et Excel">
+            <img src="image_source_portfolio/Python_excel_dashboard.png" alt="Aperçu du projet de SIRETisation avec Python et Excel" />
             <div class="projet-info">
                 <h3>SIRETisation automatisée (API INSEE)</h3>
                 <p>Technos : Python, Excel, API INSEE</p>
@@ -65,26 +65,32 @@
             </div>
         </div>
         <div class="projet">
-            <img src="image_source_portfolio/Power_bi_dashboard_2.png" alt="Aperçu de l'outil de relance commandes automatisé sous Excel VBA">
+            <img src="image_source_portfolio/Power_bi_dashboard_2.png" alt="Aperçu de l'outil de relance commandes automatisé sous Excel VBA" />
             <div class="projet-info">
                 <h3>Relance commandes automatisée (Excel VBA + Outlook)</h3>
                 <p>Technos : Excel VBA, Outlook</p>
                 <p>Un clic dans Excel pour générer un email de relance avec pièce jointe. Un outil simple et puissant qui fait gagner un temps fou aux équipes ADV.</p>
             </div>
         </div>
+
         <!-- Projet avec carrousel : relance commandes -->
-<div class="projet" id="projet-relance">
-    <img src="image_source_portfolio/red_shirt.png" alt="Aperçu de la relance commandes" onclick="openCarousel('modal-relance')" style="cursor: pointer;">
-    <div class="projet-info">
-        <h3>Relance commandes automatisée (Excel VBA + Outlook)</h3>
-        <p>Technos : Excel VBA, Outlook</p>
-        <p>Un clic dans Excel pour générer un email de relance avec pièce jointe. Un outil simple et puissant qui fait gagner un temps fou aux équipes ADV.</p>
-    </div>
-</div>
+        <div class="projet" id="projet-relance">
+            <img
+                src="image_source_portfolio/red_shirt.png"
+                alt="Aperçu de la relance commandes"
+                onclick="openCarousel('modal-relance')"
+                style="cursor: pointer;"
+            />
+            <div class="projet-info">
+                <h3>Relance commandes automatisée (Excel VBA + Outlook)</h3>
+                <p>Technos : Excel VBA, Outlook</p>
+                <p>Un clic dans Excel pour générer un email de relance avec pièce jointe. Un outil simple et puissant qui fait gagner un temps fou aux équipes ADV.</p>
+            </div>
+        </div>
 
         <!-- Projet avec carrousel -->
         <div class="projet" id="projet-bi">
-            <img src="image_source_portfolio/Power_BI_Dashboard_1.png" alt="Dashboard de suivi de boîte mail avec Power BI et Outlook">
+            <img src="image_source_portfolio/Power_BI_Dashboard_1.png" alt="Dashboard de suivi de boîte mail avec Power BI et Outlook" onclick="openCarousel('modal-carousel')" style="cursor:pointer" />
             <div class="projet-info">
                 <h3>Suivi boîte mail générique (Power Query + Power BI)</h3>
                 <p>Technos : Excel, Power BI</p>
@@ -98,8 +104,8 @@
     <h2>Contact</h2>
     <p>Envie de collaborer ? Envoie-moi un message !</p>
     <form action="mailto:info.aristil.jackson@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="nom" placeholder="Nom" required>
-        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="nom" placeholder="Nom" required />
+        <input type="email" name="email" placeholder="Email" required />
         <textarea name="message" placeholder="Message" required></textarea>
         <button type="submit">Envoyer</button>
     </form>
@@ -109,13 +115,26 @@
     <p>&copy; 2025 Mon Portfolio - Tous droits réservés.</p>
 </footer>
 
-<!-- Carrousel modale -->
+<!-- Carrousel modale Power BI -->
 <div id="modal-carousel" class="modal hidden">
     <div class="modal-content">
         <span class="close-btn">&times;</span>
         <div class="carousel-images">
-            <img src="image_source_portfolio/power bi.png" class="carousel-img active" alt="Capture 1">
-            <img src="image_source_portfolio/details_assitantes.png" class="carousel-img" alt="Capture 2">
+            <img src="image_source_portfolio/power bi.png" class="carousel-img active" alt="Capture 1" />
+            <img src="image_source_portfolio/details_assitantes.png" class="carousel-img" alt="Capture 2" />
+        </div>
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+</div>
+
+<!-- Carrousel modale pour le projet de relance -->
+<div id="modal-relance" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="carousel-images">
+            <img src="image_source_portfolio/dashboard_relance1.png" class="carousel-img active" alt="Relance capture 1" />
+            <img src="image_source_portfolio/dashboard_relance2.png" class="carousel-img" alt="Relance capture 2" />
         </div>
         <button class="prev-btn">&#10094;</button>
         <button class="next-btn">&#10095;</button>
@@ -123,18 +142,5 @@
 </div>
 
 <script src="script.js"></script>
-    <!-- Carrousel modale pour le projet de relance -->
-<div id="modal-relance" class="modal hidden">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeCarousel('modal-relance')">&times;</span>
-        <div class="carousel-images">
-            <img src="image_source_portfolio/dashboard_relance.png" alt="Relance capture 1">
-        </div>
-        <button class="prev-btn" onclick="prevSlide('modal-relance')">&#10094;</button>
-        <button class="next-btn" onclick="nextSlide('modal-relance')">&#10095;</button>
-    </div>
-</div>
-
 </body>
-    
 </html>
