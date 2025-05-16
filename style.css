@@ -194,12 +194,7 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
-  
-  max-width: 1200px;   /* largeur maximale pour centrer */
-  margin: 0 auto;      /* centre horizontalement */
-  padding: 0 10px;     /* petite marge intérieure pour petits écrans */
 }
-
 
 .projet {
   background-color: white;
@@ -374,55 +369,4 @@ footer p {
   user-select: none;
   pointer-events: none; /* pour que ça ne gêne pas les clics */
   z-index: 10;
-}
-@media (max-width: 500px) {
-  .projets-container {
-    grid-template-columns: 1fr;
-  }
-
-  .projet-info {
-    text-align: center;
-  }
-}
-.lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  z-index: 9999;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-  margin-bottom: 10px;
-}
-
-.nav-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.nav-buttons button {
-  font-size: 2rem;
-  background: none;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 3rem;
-  color: white;
-  cursor: pointer;
 }
