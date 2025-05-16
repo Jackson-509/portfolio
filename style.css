@@ -362,67 +362,72 @@ footer p {
 
 /* ===== MODALE DU CARROUSEL ===== */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
-    display: none; /* Modale cachée par défaut */
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex; /* modale visible en flex par défaut */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
 }
+
+.hidden {
+  display: none !important;
+}
+
 .modal-content {
-    position: relative;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    max-width: 90vw; /* plus large sur desktop */
-    max-height: 90vh;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  position: relative;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 90vw; /* plus large sur desktop */
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .carousel-images {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel-img {
-    display: none;
-    max-width: 100%;
-    max-height: 75vh; /* adapté pour dashboard */
-    object-fit: contain;
+  display: none;
+  max-width: 100%;
+  max-height: 75vh; /* adapté pour dashboard */
+  object-fit: contain;
 }
 
 .carousel-img.active {
-    display: block;
+  display: block;
 }
 
 .close-btn {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    font-size: 2rem;
-    color: #333;
-    cursor: pointer;
-    font-weight: bold;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255,255,255,0.8);
-    border: none;
-    font-size: 2rem;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-weight: bold;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .prev-btn { left: 0; }
@@ -430,24 +435,24 @@ footer p {
 
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 768px) {
-    .modal-content {
-        max-width: 95vw;
-        max-height: 85vh;
-        padding: 0.5rem;
-    }
+  .modal-content {
+    max-width: 95vw;
+    max-height: 85vh;
+    padding: 0.5rem;
+  }
 
-    .carousel-img {
-        max-height: 60vh;
-        max-width: 100%;
-        object-fit: contain;
-    }
+  .carousel-img {
+    max-height: 60vh;
+    max-width: 100%;
+    object-fit: contain;
+  }
 
-    .prev-btn, .next-btn {
-        font-size: 1.5rem;
-        padding: 0.3rem 0.8rem;
-    }
+  .prev-btn, .next-btn {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.8rem;
+  }
 
-    .close-btn {
-        font-size: 1.8rem;
-    }
+  .close-btn {
+    font-size: 1.8rem;
+  }
 }
