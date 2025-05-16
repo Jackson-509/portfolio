@@ -7,8 +7,8 @@ function scrollToSection(sectionId) {
 <script>
   const imageSets = {
     "boite-mail": [
-      "image_source_portfolio/boite_mail_1.png",
-      "image_source_portfolio/boite_mail_2.png",
+      "image_source_portfolio/power bi.png",
+      "image_source_portfolio/details_assitantes.png",
       "image_source_portfolio/boite_mail_3.png"
     ],
     // Tu peux en ajouter d'autres ici
