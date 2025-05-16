@@ -1,123 +1,201 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio avec Modale Galerie</title>
+<style>
+  /* Styles globaux */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    background: #f4f4f4;
+    color: #333;
+  }
+  .projets-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+  .projet {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .projet:hover {
+    transform: translateY(-5px);
+  }
+  .projet img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .projet-info {
+    margin-top: 15px;
+  }
+  /* MODALE */
+  .modal {
+    display: none; /* cachée par défaut */
+    position: fixed;
+    top: 0; left: 0; right:0; bottom:0;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal.active {
+    display: flex;
+  }
+  .modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
+  .modal-content img {
+    display: block;
+    max-width: 100%;
+    max-height: 80vh;
+    margin: auto;
+  }
+  /* Bouton fermer */
+  .modal-close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+  }
+  /* Flèches navigation */
+  .modal-prev,
+  .modal-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: rgba(0,0,0,0.6);
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+  }
+  .modal-prev:hover,
+  .modal-next:hover {
+    background: rgba(255,255,255,1);
+  }
+  .modal-prev {
+    left: 10px;
+  }
+  .modal-next {
+    right: 10px;
+  }
+</style>
 </head>
 <body>
 
-<header>
-    <div class="header-container">
-        <div class="header-left"></div>
-        <nav class="header-center">
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="header-right">
-            <a href="https://www.linkedin.com/in/jackson-aristil" target="_blank">
-                <img src="image_source_portfolio/LI-Logo.png" alt="Logo LinkedIn" class="linkedin-logo" style="height: 30px; width: 100px;">
-            </a>
-            <span class="nom-utilisateur">Jackson Aristil</span>
-            <img src="image_source_portfolio/Jackson_photo_profil.png" alt="Photo de Jackson Aristil" class="photo-profil">
-        </div>
+<h1 style="text-align:center; margin-top: 20px;">Mes Projets</h1>
+<div class="projets-container">
+
+  <!-- Projet normal -->
+  <div class="projet">
+    <img src="image_source_portfolio/Python_excel_dashboard.png" alt="SIRETisation automatisée" />
+    <div class="projet-info">
+      <h3>SIRETisation automatisée (API INSEE)</h3>
+      <p>Technos : Python, Excel, API INSEE</p>
     </div>
-</header>
+  </div>
 
-<section id="accueil">
-    <div class="message-discret-accueil">Site créé avec HTML + CSS</div>
-    <h1>Bienvenue</h1>
-    <p>Je suis un passionné de data, orienté solutions et curieux par nature.</p>
-    <button onclick="document.getElementById('competences').scrollIntoView({behavior: 'smooth'});">Voir mes compétences</button>
-</section>
-
-<section id="competences">
-    <h2>Compétences</h2>
-    <p>Voici les outils et technologies que je maîtrise :</p>
-    <div class="competence-bubbles">
-        <span class="bubble excel">Excel</span>
-        <span class="bubble powerbi">Power BI</span>
-        <span class="bubble sql">SQL</span>
-        <span class="bubble python">Python</span>
-        <span class="bubble cleaning">Nettoyage de données</span>
-        <span class="bubble reporting">Automatisation</span>
-        <span class="bubble html">HTML</span>
-        <span class="bubble css">CSS</span>
-        <span class="bubble grey">IA</span>
-        <span class="bubble html-css">HTML + CSS</span>
+  <!-- Projet avec modale -->
+  <div class="projet" id="projet-bi">
+    <img src="image_source_portfolio/Power_BI_Dashboard_1.png" alt="Suivi boîte mail générique" />
+    <div class="projet-info">
+      <h3>Suivi boîte mail générique (Power Query + Power BI)</h3>
+      <p>Technos : Excel, Power BI</p>
     </div>
-</section>
+  </div>
 
-<section id="projets">
-    <h2>Mes Projets</h2>
-    <div class="projets-container">
-        <div class="projet">
-            <img src="image_source_portfolio/Python_excel_dashboard.png" alt="Aperçu du projet de SIRETisation avec Python et Excel">
-            <div class="projet-info">
-                <h3>SIRETisation automatisée (API INSEE)</h3>
-                <p>Technos : Python, Excel, API INSEE</p>
-                <p>Nettoyage et enrichissement automatique d’une base client via l’API INSEE. Double version Python + Excel pour fiabiliser les SIRETs et adapter l’outil au niveau technique des utilisateurs.</p>
-            </div>
-        </div>
-        <div class="projet">
-            <img src="image_source_portfolio/Power_bi_dashboard_2.png" alt="Aperçu de l'outil de relance commandes automatisé sous Excel VBA">
-            <div class="projet-info">
-                <h3>Relance commandes automatisée (Excel VBA + Outlook)</h3>
-                <p>Technos : Excel VBA, Outlook</p>
-                <p>Un clic dans Excel pour générer un email de relance avec pièce jointe. Un outil simple et puissant qui fait gagner un temps fou aux équipes ADV.</p>
-            </div>
-        </div>
-        <div class="projet">
-            <img src="image_source_portfolio/red_shirt.png" alt="Dashboard de suivi des commandes à relancer sous Power BI">
-            <div class="projet-info">
-                <h3>Dashboard relances commandes (Power BI)</h3>
-                <p>Technos : Excel VBA, Power BI</p>
-                <p>Pilotage visuel des commandes à relancer : délais, statuts, suivi des retards. Un dashboard clair, connecté à Excel, pensé pour les managers.</p>
-            </div>
-        </div>
-        <div class="projet" onclick="toggleGallery()">
-            <img src="image_source_portfolio/Power_BI_Dashboard_1.png" alt="Dashboard de suivi de boîte mail avec Power BI et Outlook">
-            <div class="projet-info">
-                <h3>Suivi boîte mail générique (Power Query + Power BI)</h3>
-                <p>Technos : Excel, Power BI</p>
-                <p>Suivi temps réel des mails reçus/traités via un tableau de bord connecté à Outlook. Typologie des demandes, charge de travail et qualité de service en un clin d’œil.</p>
-            </div>
-        </div>
+</div>
 
-        <!-- Galerie masquée -->
-        <div id="mail-gallery" style="display: none; margin-top: 1rem;">
-            <img src="image_source_portfolio/power bi.png" alt="Capture 1" style="max-width: 100%; margin: 0.5rem 0;">
-            <img src="image_source_portfolio/details_assitantes.png" alt="Capture 2" style="max-width: 100%; margin: 0.5rem 0;">
-            <img src="image_source_portfolio/mail3.png" alt="Capture 3" style="max-width: 100%; margin: 0.5rem 0;">
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Envie de collaborer ? Envoie-moi un message !</p>
-    <form action="mailto:info.aristil.jackson@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="nom" placeholder="Nom" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Message" required></textarea>
-        <button type="submit">Envoyer</button>
-    </form>
-</section>
-
-<footer>
-    <p>&copy; 2025 Mon Portfolio - Tous droits réservés.</p>
-</footer>
+<!-- MODALE -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="modal-close" id="modal-close">&times;</span>
+    <span class="modal-prev" id="modal-prev">&#10094;</span>
+    <span class="modal-next" id="modal-next">&#10095;</span>
+    <img id="modal-image" src="" alt="Image du projet" />
+  </div>
+</div>
 
 <script>
-    function toggleGallery() {
-        const gallery = document.getElementById("mail-gallery");
-        gallery.style.display = (gallery.style.display === "none") ? "block" : "none";
+  const modal = document.getElementById('modal');
+  const modalImage = document.getElementById('modal-image');
+  const closeBtn = document.getElementById('modal-close');
+  const prevBtn = document.getElementById('modal-prev');
+  const nextBtn = document.getElementById('modal-next');
+  const projetBi = document.getElementById('projet-bi');
+
+  // Liste des images à afficher dans la modale
+  const images = [
+    'image_source_portfolio/power bi.png',
+    'image_source_portfolio/details_assitantes.png',
+    'image_source_portfolio/mail3.png'
+  ];
+
+  let currentIndex = 0;
+
+  // Ouvrir la modale et afficher la première image
+  projetBi.addEventListener('click', () => {
+    currentIndex = 0;
+    modalImage.src = images[currentIndex];
+    modal.classList.add('active');
+  });
+
+  // Fermer la modale
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+  });
+
+  // Naviguer vers l’image précédente
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    modalImage.src = images[currentIndex];
+  });
+
+  // Naviguer vers l’image suivante
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    modalImage.src = images[currentIndex];
+  });
+
+  // Fermer la modale en cliquant en dehors de l’image
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
     }
+  });
+
+  // Navigation clavier (facultatif)
+  window.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('active')) return;
+    if (e.key === 'ArrowLeft') {
+      prevBtn.click();
+    } else if (e.key === 'ArrowRight') {
+      nextBtn.click();
+    } else if (e.key === 'Escape') {
+      closeBtn.click();
+    }
+  });
 </script>
 
 </body>
