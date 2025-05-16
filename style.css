@@ -194,7 +194,12 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
+  
+  max-width: 1200px;   /* largeur maximale pour centrer */
+  margin: 0 auto;      /* centre horizontalement */
+  padding: 0 10px;     /* petite marge intérieure pour petits écrans */
 }
+
 
 .projet {
   background-color: white;
@@ -369,4 +374,13 @@ footer p {
   user-select: none;
   pointer-events: none; /* pour que ça ne gêne pas les clics */
   z-index: 10;
+}
+@media (max-width: 500px) {
+  .projets-container {
+    grid-template-columns: 1fr;
+  }
+
+  .projet-info {
+    text-align: center;
+  }
 }
