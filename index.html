@@ -72,14 +72,16 @@
                 <p>Un clic dans Excel pour générer un email de relance avec pièce jointe. Un outil simple et puissant qui fait gagner un temps fou aux équipes ADV.</p>
             </div>
         </div>
-        <div class="projet">
-            <img src="image_source_portfolio/red_shirt.png" alt="Dashboard de suivi des commandes à relancer sous Power BI">
-            <div class="projet-info">
-                <h3>Dashboard relances commandes (Power BI)</h3>
-                <p>Technos : Excel VBA, Power BI</p>
-                <p>Pilotage visuel des commandes à relancer : délais, statuts, suivi des retards. Un dashboard clair, connecté à Excel, pensé pour les managers.</p>
-            </div>
-        </div>
+        <!-- Projet avec carrousel : relance commandes -->
+<div class="projet" id="projet-relance">
+    <img src="image_source_portfolio/Power_bi_dashboard_2.png" alt="Aperçu de la relance commandes" onclick="openCarousel('modal-relance')" style="cursor: pointer;">
+    <div class="projet-info">
+        <h3>Relance commandes automatisée (Excel VBA + Outlook)</h3>
+        <p>Technos : Excel VBA, Outlook</p>
+        <p>Un clic dans Excel pour générer un email de relance avec pièce jointe. Un outil simple et puissant qui fait gagner un temps fou aux équipes ADV.</p>
+    </div>
+</div>
+
         <!-- Projet avec carrousel -->
         <div class="projet" id="projet-bi">
             <img src="image_source_portfolio/Power_BI_Dashboard_1.png" alt="Dashboard de suivi de boîte mail avec Power BI et Outlook">
@@ -121,5 +123,18 @@
 </div>
 
 <script src="script.js"></script>
+    <!-- Carrousel modale pour le projet de relance -->
+<div id="modal-relance" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeCarousel('modal-relance')">&times;</span>
+        <div class="carousel-images">
+            <img src="image_source_portfolio/dashboard_relance.png" alt="Relance capture 1">
+        </div>
+        <button class="prev-btn" onclick="prevSlide('modal-relance')">&#10094;</button>
+        <button class="next-btn" onclick="nextSlide('modal-relance')">&#10095;</button>
+    </div>
+</div>
+
 </body>
+    
 </html>
