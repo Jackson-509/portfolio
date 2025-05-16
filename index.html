@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -81,7 +80,8 @@
                 <p>Pilotage visuel des commandes à relancer : délais, statuts, suivi des retards. Un dashboard clair, connecté à Excel, pensé pour les managers.</p>
             </div>
         </div>
-        <div class="projet" onclick="toggleGallery()">
+        <!-- Projet avec carrousel -->
+        <div class="projet" id="projet-bi">
             <img src="image_source_portfolio/Power_BI_Dashboard_1.png" alt="Dashboard de suivi de boîte mail avec Power BI et Outlook">
             <div class="projet-info">
                 <h3>Suivi boîte mail générique (Power Query + Power BI)</h3>
@@ -89,14 +89,7 @@
                 <p>Suivi temps réel des mails reçus/traités via un tableau de bord connecté à Outlook. Typologie des demandes, charge de travail et qualité de service en un clin d’œil.</p>
             </div>
         </div>
-    <!-- Galerie masquée -->
-    <div id="mail-gallery" style="display: none; margin-top: 1rem;">
-        <img src="image_source_portfolio/power bi.png" alt="Capture 1" style="max-width: 100%; margin: 0.5rem 0;">
-        <img src="image_source_portfolio/details_assitantes.png" alt="Capture 2" style="max-width: 100%; margin: 0.5rem 0;">
-        <img src="image_source_portfolio/mail3.png" alt="Capture 3" style="max-width: 100%; margin: 0.5rem 0;">
     </div>
-</div>
-
 </section>
 
 <section id="contact">
@@ -114,12 +107,20 @@
     <p>&copy; 2025 Mon Portfolio - Tous droits réservés.</p>
 </footer>
 
-<script>
-    function toggleGallery() {
-        const gallery = document.getElementById("mail-gallery");
-        gallery.style.display = (gallery.style.display === "none") ? "block" : "none";
-    }
-</script>
+<!-- Carrousel modale -->
+<div id="modal-carousel" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="carousel-images">
+            <img src="image_source_portfolio/Power_BI_Dashboard_1.png" class="carousel-img active" alt="Capture 1">
+            <img src="image_source_portfolio/details_assitantes.png" class="carousel-img" alt="Capture 2">
+            <img src="image_source_portfolio/mail3.png" class="carousel-img" alt="Capture 3">
+        </div>
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+</div>
 
+<script src="script.js"></script>
 </body>
 </html>
