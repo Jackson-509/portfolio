@@ -1,75 +1,49 @@
-// --- Défilement fluide vers une section ---
-function scrollToSection(sectionId) {
-  const section = document.getElementById(sectionId);
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
-  }
-}
-window.scrollToSection = scrollToSection;
-
-// --- Gestion des modales carrousel multiples ---
-const carousels = {}; // Stocke l'index actif de chaque modale
-
-function openCarousel(id) {
-  const modal = document.getElementById(id);
-  if (!modal) return;
-
-  modal.classList.remove('hidden');
-  carousels[id] = 0;
-  showImage(id, 0);
-}
-
-function closeCarousel(id) {
-  const modal = document.getElementById(id);
-  if (modal) {
-    modal.classList.add('hidden');
-  }
-}
-
-function showImage(id, index) {
-  const modal = document.getElementById(id);
+function openCarousel(modalId) {
+  const modal = document.getElementById(modalId);
   if (!modal) return;
 
   const images = modal.querySelectorAll('.carousel-img');
-  if (!images.length) return;
+  let currentIndex = 0;
 
-  index = (index + images.length) % images.length;
-  carousels[id] = index;
-
-  images.forEach((img, i) => {
-    img.classList.toggle('active', i === index);
-    img.style.display = i === index ? 'block' : 'none';
-  });
-}
-
-function nextSlide(id) {
-  showImage(id, carousels[id] + 1);
-}
-
-function prevSlide(id) {
-  showImage(id, carousels[id] - 1);
-}
-
-// --- Initialisation automatique des modales ---
-document.querySelectorAll('.modal').forEach(modal => {
-  const id = modal.id;
-
-  // Bouton de fermeture
-  const closeBtn = modal.querySelector('.close-btn');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => closeCarousel(id));
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
   }
 
-  // Boutons navigation
+  // Afficher modale et première image
+  modal.classList.remove('hidden');
+  showImage(currentIndex);
+
+  // Boutons
   const prevBtn = modal.querySelector('.prev-btn');
   const nextBtn = modal.querySelector('.next-btn');
-  if (prevBtn) prevBtn.addEventListener('click', () => prevSlide(id));
-  if (nextBtn) nextBtn.addEventListener('click', () => nextSlide(id));
+  const closeBtn = modal.querySelector('.close-btn');
 
-  // Clic en dehors du contenu
-  modal.addEventListener('click', (e) => {
+  // Nettoyer anciens handlers au cas où (pour éviter accumuler)
+  prevBtn.onclick = null;
+  nextBtn.onclick = null;
+  closeBtn.onclick = null;
+  modal.onclick = null;
+
+  prevBtn.onclick = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  };
+
+  nextBtn.onclick = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  };
+
+  closeBtn.onclick = () => {
+    modal.classList.add('hidden');
+  };
+
+  // Fermer modale en cliquant en dehors du contenu
+  modal.onclick = (e) => {
     if (e.target === modal) {
-      closeCarousel(id);
+      modal.classList.add('hidden');
     }
-  });
-});
+  };
+}
