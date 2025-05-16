@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
 <header>
     <div class="header-container">
-        <div class="header-left"></div> <!-- vide pour équilibrer -->
+        <div class="header-left"></div>
         <nav class="header-center">
             <ul>
                 <li><a href="#accueil">Accueil</a></li>
@@ -62,7 +61,6 @@
             <div class="projet-info">
                 <h3>SIRETisation automatisée (API INSEE)</h3>
                 <p>Technos : Python, Excel, API INSEE</p>
-                <p>Description :</p>
                 <p>Nettoyage et enrichissement automatique d’une base client via l’API INSEE. Double version Python + Excel pour fiabiliser les SIRETs et adapter l’outil au niveau technique des utilisateurs.</p>
             </div>
         </div>
@@ -71,7 +69,6 @@
             <div class="projet-info">
                 <h3>Relance commandes automatisée (Excel VBA + Outlook)</h3>
                 <p>Technos : Excel VBA, Outlook</p>
-                <p>Description :</p>
                 <p>Un clic dans Excel pour générer un email de relance avec pièce jointe. Un outil simple et puissant qui fait gagner un temps fou aux équipes ADV.</p>
             </div>
         </div>
@@ -80,18 +77,23 @@
             <div class="projet-info">
                 <h3>Dashboard relances commandes (Power BI)</h3>
                 <p>Technos : Excel VBA, Power BI</p>
-                <p>Description :</p>
                 <p>Pilotage visuel des commandes à relancer : délais, statuts, suivi des retards. Un dashboard clair, connecté à Excel, pensé pour les managers.</p>
             </div>
         </div>
-        <div class="projet">
+        <div class="projet" onclick="toggleGallery()">
             <img src="image_source_portfolio/Power_BI_Dashboard_1.png" alt="Dashboard de suivi de boîte mail avec Power BI et Outlook">
             <div class="projet-info">
                 <h3>Suivi boîte mail générique (Power Query + Power BI)</h3>
                 <p>Technos : Excel, Power BI</p>
-                <p>Description :</p>
                 <p>Suivi temps réel des mails reçus/traités via un tableau de bord connecté à Outlook. Typologie des demandes, charge de travail et qualité de service en un clin d’œil.</p>
             </div>
+        </div>
+
+        <!-- Galerie masquée -->
+        <div id="mail-gallery" style="display: none; margin-top: 1rem;">
+            <img src="image_source_portfolio/mail1.png" alt="Capture 1" style="max-width: 100%; margin: 0.5rem 0;">
+            <img src="image_source_portfolio/mail2.png" alt="Capture 2" style="max-width: 100%; margin: 0.5rem 0;">
+            <img src="image_source_portfolio/mail3.png" alt="Capture 3" style="max-width: 100%; margin: 0.5rem 0;">
         </div>
     </div>
 </section>
@@ -110,6 +112,13 @@
 <footer>
     <p>&copy; 2025 Mon Portfolio - Tous droits réservés.</p>
 </footer>
-</body>
 
+<script>
+    function toggleGallery() {
+        const gallery = document.getElementById("mail-gallery");
+        gallery.style.display = (gallery.style.display === "none") ? "block" : "none";
+    }
+</script>
+
+</body>
 </html>
