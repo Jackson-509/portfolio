@@ -66,6 +66,9 @@ a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  font-size: 16px;          /* Uniformise la taille */
+  display: inline-block;    /* Pour garantir la même structure */
+  line-height: 1.2;
   transition: color 0.3s ease;
 }
 
@@ -221,7 +224,7 @@ a {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  cursor: pointer; /* Pour montrer que c’est cliquable */
+  cursor: pointer;
 }
 
 .projet:hover {
@@ -368,7 +371,7 @@ footer p {
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.85);
-  display: flex; /* modale visible en flex par défaut */
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
@@ -383,10 +386,10 @@ footer p {
   background: #fff;
   padding: 1rem;
   border-radius: 8px;
-  max-width: 90vw; /* plus large sur desktop */
+  max-width: 90vw;
   max-height: 90vh;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .carousel-images {
@@ -400,7 +403,7 @@ footer p {
 .carousel-img {
   display: none;
   max-width: 100%;
-  max-height: 75vh; /* adapté pour dashboard */
+  max-height: 75vh;
   object-fit: contain;
 }
 
