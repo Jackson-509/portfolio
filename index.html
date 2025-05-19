@@ -13,6 +13,175 @@
         <div class="header-left"></div>
         <nav class="header-center">
             <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+              <li>
+  <a href="CV_Jackson_Aristil.pdf" target="_blank" rel="noopener noreferrer">
+    📄 Mon CV
+  </a>
+</li>
+
+            </ul>
+        </nav>
+        <div class="header-right">
+            <a href="https://www.linkedin.com/in/jackson-aristil" target="_blank">
+                <img src="image_source_portfolio/LI-Logo.png" alt="Logo LinkedIn" class="linkedin-logo" style="height: 30px; width: 100px;" />
+            </a>
+            <span class="nom-utilisateur">Jackson Aristil</span>
+            <img src="image_source_portfolio/Jackson_photo_profil.png" alt="Photo de Jackson Aristil" class="photo-profil" />
+        </div>
+    </div>
+</header>
+
+<section id="accueil">
+    <div class="message-discret-accueil">Site créé avec HTML + CSS</div>
+    <h1>Bienvenue</h1>
+    <p>Je suis un passionné de data, orienté solutions et curieux par nature.</p>
+    <button onclick="document.getElementById('competences').scrollIntoView({behavior: 'smooth'});">Voir mes compétences</button>
+</section>
+
+<section id="competences">
+    <h2>Compétences</h2>
+    <p>Voici les outils et technologies que je maîtrise :</p>
+    <div class="competence-bubbles">
+        <span class="bubble excel">Excel</span>
+        <span class="bubble powerbi">Power BI</span>
+        <span class="bubble sql">SQL</span>
+        <span class="bubble python">Python</span>
+        <span class="bubble cleaning">Nettoyage de données</span>
+        <span class="bubble reporting">Automatisation</span>
+        <span class="bubble html">HTML</span>
+        <span class="bubble css">CSS</span>
+        <span class="bubble grey">IA</span>
+        <span class="bubble html-css">HTML + CSS</span>
+    </div>
+</section>
+
+<section id="projets">
+    <h2>Mes Projets</h2>
+    <div class="projets-container">
+        <div class="projet" id="projet-siretisation">
+    <img
+        src="image_source_portfolio/Python_excel_dashboard.png"
+        alt="Aperçu du projet SIRETisation"
+        onclick="openCarousel('modal-siretisation')"
+        style="cursor: pointer;"
+    />
+    <div class="projet-info">
+        <h3>SIRETisation automatisée (API INSEE)</h3>
+        <p>Technos : Python, Excel, API INSEE</p>
+        <p>Nettoyage et enrichissement automatique d’une base client via l’API INSEE. Double version Python ou Excel pour fiabiliser les adresses</p>
+    </div>
+</div>
+        <div class="projet">
+            <img src="image_source_portfolio/Power_bi_dashboard_2.png" alt="Aperçu de l'outil de relance commandes automatisé sous Excel VBA" />
+            <div class="projet-info">
+                <h3>Relance commandes automatisée (Excel VBA + Outlook)</h3>
+                <p>Technos : Excel VBA, Outlook</p>
+                <p>Un clic dans Excel pour générer un email de relance avec pièce jointe. Un outil simple et puissant qui fait gagner un temps fou aux équipes ADV.</p>
+            </div>
+        </div>
+
+        <!-- Projet avec carrousel : relance commandes -->
+        <div class="projet" id="projet-relance">
+            <img
+                src="image_source_portfolio/red_shirt.png"
+                alt="Aperçu de la relance commandes"
+                onclick="openCarousel('modal-relance')"
+                style="cursor: pointer;"
+            />
+            <div class="projet-info">
+                <h3>Relance commandes automatisée (Excel VBA + Outlook)</h3>
+                <p>Technos : Excel VBA, Outlook</p>
+                <p>Un clic dans Excel pour générer un email de relance avec pièce jointe. Un outil simple et puissant qui fait gagner un temps fou aux équipes ADV.</p>
+            </div>
+        </div>
+
+        <!-- Projet avec carrousel -->
+        <div class="projet" id="projet-bi">
+            <img src="image_source_portfolio/Power_BI_Dashboard_1.png" alt="Dashboard de suivi de boîte mail avec Power BI et Outlook" onclick="openCarousel('modal-carousel')" style="cursor:pointer" />
+            <div class="projet-info">
+                <h3>Suivi boîte mail générique (Power Query + Power BI)</h3>
+                <p>Technos : Excel, Power BI</p>
+                <p>Suivi temps réel des mails reçus/traités via un tableau de bord connecté à Outlook. Typologie des demandes, charge de travail et qualité de service en un clin d’œil.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Envie de collaborer ? Envoie-moi un message !</p>
+    <form action="mailto:info.aristil.jackson@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="nom" placeholder="Nom" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 Mon Portfolio - Tous droits réservés.</p>
+</footer>
+
+<!-- Carrousel modale Power BI -->
+<div id="modal-carousel" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="carousel-images">
+            <img src="image_source_portfolio/power bi.png" class="carousel-img active" alt="Capture 1" />
+            <img src="image_source_portfolio/details_assitantes.png" class="carousel-img" alt="Capture 2" />
+        </div>
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+</div>
+
+<!-- Carrousel modale pour le projet de relance -->
+<div id="modal-relance" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="carousel-images">
+            <img src="image_source_portfolio/dashboard_relance.png" class="carousel-img active" alt="Relance capture 1" />
+            <img src="image_source_portfolio/dashboard_relance2.png" class="carousel-img" alt="Relance capture 2" />
+        </div>
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+</div>
+<!-- Carrousel modale pour SIRETisation -->
+<div id="modal-siretisation" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="carousel-images">
+            <img src="image_source_portfolio/Powerbi_rapport_scoring_tiers.PNG" class="carousel-img active" alt="Capture 1 SIRET" />
+            <img src="image_source_portfolio/SIRET_capture2.png" class="carousel-img" alt="Capture 2 SIRET" />
+            <!-- Ajoute d'autres images ici si besoin -->
+        </div>
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="header-left"></div>
+        <nav class="header-center">
+            <ul>
                 <li><a href="CV_Jackson_Aristil.pdf" target="_blank" rel="noopener noreferrer">📄 Mon CV</a></li>
                 <li><a href="#competences">Compétences</a></li>
                 <li><a href="#projets">Projets</a></li>
@@ -67,6 +236,15 @@
         <p>Nettoyage et enrichissement automatique d’une base client via l’API INSEE. Double version Python ou Excel pour fiabiliser les adresses</p>
     </div>
 </div>
+        <div class="projet">
+            <img src="image_source_portfolio/Power_bi_dashboard_2.png" alt="Aperçu de l'outil de relance commandes automatisé sous Excel VBA" />
+            <div class="projet-info">
+                <h3>Relance commandes automatisée (Excel VBA + Outlook)</h3>
+                <p>Technos : Excel VBA, Outlook</p>
+                <p>Un clic dans Excel pour générer un email de relance avec pièce jointe. Un outil simple et puissant qui fait gagner un temps fou aux équipes ADV.</p>
+            </div>
+        </div>
+
         <!-- Projet avec carrousel : relance commandes -->
         <div class="projet" id="projet-relance">
             <img
@@ -90,14 +268,6 @@
                 <p>Technos : Excel, Power BI</p>
                 <p>Suivi temps réel des mails reçus/traités via un tableau de bord connecté à Outlook. Typologie des demandes, charge de travail et qualité de service en un clin d’œil.</p>
             </div>
-        <div class="projet">
-            <img src="image_source_portfolio/Power_bi_dashboard_2.png" alt="Aperçu de l'outil de relance commandes automatisé sous Excel VBA" />
-            <div class="projet-info">
-                <h3>Relance commandes automatisée (Excel VBA + Outlook)</h3>
-                <p>Technos : Excel VBA, Outlook</p>
-                <p>Un clic dans Excel pour générer un email de relance avec pièce jointe. Un outil simple et puissant qui fait gagner un temps fou aux équipes ADV.</p>
-            </div>
-        </div>
         </div>
     </div>
 </section>
