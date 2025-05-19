@@ -20,7 +20,7 @@
             </ul>
         </nav>
         <div class="header-right">
-            <a href="https://www.linkedin.com/in/jackson-aristil" target="_blank">
+            <a href="https://www.linkedin.com/in/jackson-aristil" target="_blank" rel="noopener noreferrer">
                 <img src="image_source_portfolio/LI-Logo.png" alt="Logo LinkedIn" class="linkedin-logo" style="height: 30px; width: 100px;" />
             </a>
             <span class="nom-utilisateur">Jackson Aristil</span>
@@ -116,7 +116,6 @@
     </div>
 </section>
 
-
 <section id="contact">
     <h2>Contact</h2>
     <p>Envie de collaborer ? Envoie-moi un message !</p>
@@ -132,20 +131,23 @@
     <p>&copy; 2025 Mon Portfolio - Tous droits réservés.</p>
 </footer>
 
-<!-- Carrousel modale Power BI -->
-<div id="modal-carousel" class="modal hidden">
+<!-- Modale SIRETisation -->
+<div id="modal-siretisation" class="modal hidden">
     <div class="modal-content">
         <span class="close-btn">&times;</span>
         <div class="carousel-images">
-            <img src="image_source_portfolio/power bi.png" class="carousel-img active" alt="Capture 1" />
-            <img src="image_source_portfolio/details_assitantes.png" class="carousel-img" alt="Capture 2" />
+            <video class="carousel-img" controls>
+                <source src="image_source_portfolio/Base_tiers_fiabilisation.mp4" type="video/mp4" />
+                Ton navigateur ne supporte pas la vidéo HTML5.
+            </video>
+            <img src="image_source_portfolio/Powerbi_scoring_client.PNG" class="carousel-img active" alt="Capture 1 SIRET" />
         </div>
         <button class="prev-btn">&#10094;</button>
         <button class="next-btn">&#10095;</button>
     </div>
 </div>
 
-<!-- Carrousel modale pour le projet de relance -->
+<!-- Modale Relance commandes -->
 <div id="modal-relance" class="modal hidden">
     <div class="modal-content">
         <span class="close-btn">&times;</span>
@@ -158,16 +160,13 @@
     </div>
 </div>
 
-<!-- Carrousel modale pour SIRETisation -->
-<div id="modal-siretisation" class="modal hidden">
+<!-- Modale Suivi boîte mail générique -->
+<div id="modal-carousel" class="modal hidden">
     <div class="modal-content">
         <span class="close-btn">&times;</span>
         <div class="carousel-images">
-            <video class="carousel-img" controls>
-                <source src="image_source_portfolio/Base_tiers_fiabilisation.mp4" type="video/mp4" />
-                Ton navigateur ne supporte pas la vidéo HTML5.
-            </video>
-            <img src="image_source_portfolio/Powerbi_scoring_client.PNG" class="carousel-img active" alt="Capture 1 SIRET" />
+            <img src="image_source_portfolio/power bi.png" class="carousel-img active" alt="Capture 1" />
+            <img src="image_source_portfolio/details_assitantes.png" class="carousel-img" alt="Capture 2" />
         </div>
         <button class="prev-btn">&#10094;</button>
         <button class="next-btn">&#10095;</button>
