@@ -460,23 +460,4 @@ footer p {
   }
 }
 
-.projet.disabled {
-    opacity: 0.5;
-    filter: grayscale(100%);
-    pointer-events: none; /* empêche les clics si jamais */
-    position: relative;
-}
-
-.projet.disabled::after {
-    content: "En cours de développement...";
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #333;
-    padding: 5px 10px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    border-radius: 5px;
-}
 
