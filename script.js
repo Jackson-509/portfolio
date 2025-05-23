@@ -47,3 +47,19 @@ function openCarousel(modalId) {
     }
   };
 }
+
+fetch("https://hooks.zapier.com/hooks/catch/23024599/2jdgkx4/", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    timestamp: new Date().toISOString(),
+    userAgent: navigator.userAgent,
+    language: navigator.language,
+    referrer: document.referrer,
+    page: window.location.href
+  })
+})
+.catch(err => console.error("Erreur envoi Zapier :", err));
+
