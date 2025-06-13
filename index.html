@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Mon Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
 <header>
     <div class="header-container">
-        <div class="header-left"></div>
+        <div class="header-left">
+            <!-- Contenu gauche optionnel -->
+        </div>
+        
         <nav class="header-center">
             <ul>
                 <li><a href="CV_Gestionnaire_de_données_Jackson_Aristil_.pdf" target="_blank" rel="noopener noreferrer">📄 CV</a></li>
@@ -20,35 +24,44 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        
         <div class="header-right">
-            <a href="https://www.linkedin.com/in/jackson-aristil" target="_blank" rel="noopener noreferrer">
-                <img src="image_source_portfolio/LI-Logo.png" alt="Logo LinkedIn" class="linkedin-logo" style="height: 30px; width: 100px;" />
+            <a href="https://www.linkedin.com/in/jackson-aristil" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i>
             </a>
             <span class="nom-utilisateur">Jackson Aristil</span>
-            <img src="image_source_portfolio/Jackson_photo_profil.png" alt="Photo de Jackson Aristil" class="photo-profil" />
+            <img src="image_source_portfolio/Jackson_photo_profil.png" alt="Photo de profil" class="photo-profil">
         </div>
     </div>
 </header>
 
 <section id="accueil">
-    <div class="message-discret-accueil">Site créé en langage HTML + CSS + Js par moi !</div>
-    <h1>Bienvenue</h1>
-    <p>Je suis un passionné de data, orienté solutions et curieux par nature.</p>
-    <button onclick="document.getElementById('competences').scrollIntoView({behavior: 'smooth'});">Voir mes compétences</button>
+    <div class="wave">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="content">
+        <div class="message-discret-accueil">Site créé en langage HTML + CSS + Js par moi !</div>
+        <h1>Bienvenue</h1>
+        <p>Je suis un passionné de data, orienté solutions et curieux par nature.</p>
+        <button onclick="document.getElementById('competences').scrollIntoView({behavior: 'smooth'});">Voir mes compétences</button>
+    </div>
 </section>
 
 <section id="competences">
     <h2>Compétences</h2>
     <p>Voici les outils et technologies que je maîtrise :</p>
     <div class="competence-bubbles">
-        <span class="bubble excel">Excel</span>
-        <span class="bubble powerbi">Power BI</span>
-        <span class="bubble sql">SQL</span>
-        <span class="bubble python">Python</span>
-        <span class="bubble cleaning">Nettoyage de données</span>
-        <span class="bubble reporting">Automatisation</span>
-        <span class="bubble grey">IA</span>
-        <span class="bubble html-css">HTML + CSS</span>
+        <span class="bubble excel"><i class="fas fa-file-excel"></i> Excel</span>
+        <span class="bubble powerbi"><i class="fas fa-chart-line"></i> Power BI</span>
+        <span class="bubble sql"><i class="fas fa-database"></i> SQL</span>
+        <span class="bubble python"><i class="fab fa-python"></i> Python</span>
+        <span class="bubble cleaning"><i class="fas fa-broom"></i> Nettoyage</span>
+        <span class="bubble reporting"><i class="fas fa-robot"></i> Automatisation</span>
+        <span class="bubble github"><i class="fab fa-github"></i> GitHub</span>
+        <span class="bubble grey"><i class="fas fa-brain"></i> IA</span>
+        <span class="bubble html-css"><i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> HTML & CSS</span>
     </div>
 </section>
 
@@ -66,8 +79,12 @@
             />
             <div class="projet-info">
                 <h3>SIRETisation automatisée (API INSEE)</h3>
-                <p>Technos : Python, Excel, API INSEE</p>
-                <p>Nettoyage et enrichissement automatique d’une base client via l’API INSEE. Double version Python ou Excel pour fiabiliser les adresses.</p>
+                <div class="tech-icons">
+                    <i class="fab fa-python tech-icon python" title="Python"></i>
+                    <i class="fas fa-file-excel tech-icon excel" title="Excel"></i>
+                    <i class="fas fa-database tech-icon sql" title="API INSEE"></i>
+                </div>
+                <p>Nettoyage et enrichissement automatique d'une base client via l'API INSEE. Double version Python ou Excel pour fiabiliser les adresses.</p>
             </div>
         </div>
 
@@ -81,7 +98,11 @@
             />
             <div class="projet-info">
                 <h3>Relance commandes semi-automatisée ou automatisée (Excel VBA + Outlook)</h3>
-                <p>Technos : Excel VBA, Outlook</p>
+                <div class="tech-icons">
+                    <i class="fas fa-file-excel tech-icon excel" title="Excel VBA"></i>
+                    <i class="fas fa-envelope tech-icon outlook" title="Outlook"></i>
+                    <i class="fas fa-robot tech-icon vba" title="Automatisation"></i>
+                </div>
                 <p>Un clic dans Excel pour générer un email de relance avec pièce jointe. Un outil simple et puissant qui fait gagner un temps fou aux équipes ADV.</p>
             </div>
         </div>
@@ -96,8 +117,12 @@
             />
             <div class="projet-info">
                 <h3>Suivi boîte mail générique (Power Query + Power BI)</h3>
-                <p>Technos : Excel, Power BI</p>
-                <p>Suivi temps réel des mails reçus/traités via un tableau de bord connecté à Outlook. Typologie des demandes, charge de travail et qualité de service en un clin d’œil.</p>
+                <div class="tech-icons">
+                    <i class="fas fa-chart-line tech-icon powerbi" title="Power BI"></i>
+                    <i class="fas fa-file-excel tech-icon excel" title="Power Query"></i>
+                    <i class="fas fa-envelope tech-icon outlook" title="Outlook"></i>
+                </div>
+                <p>Suivi temps réel des mails reçus/traités via un tableau de bord connecté à Outlook. Typologie des demandes, charge de travail et qualité de service en un clin d'œil.</p>
             </div>
         </div>
 
@@ -109,7 +134,11 @@
             />
             <div class="projet-info">
                 <h3>Smart Address Extractor</h3>
-                <p>Technos : Python, Excel</p>
+                <div class="tech-icons">
+                    <i class="fab fa-python tech-icon python" title="Python"></i>
+                    <i class="fas fa-file-excel tech-icon excel" title="Excel"></i>
+                    <i class="fas fa-brain tech-icon ai" title="Intelligence Artificielle"></i>
+                </div>
                 <p>Solution d'automatisation qui identifie et extrait les adresses sur des documents entrants (courriers, formulaires, scans), pour accélérer le traitement, fiabiliser les données et réduire les tâches manuelles.</p>
             </div>
         </div>
@@ -122,7 +151,9 @@
             />
             <div class="projet-info">
                 <h3>Automatisation tâches assistantes ADV</h3>
-                <p>Technos : En cours de développement.</p>
+                <div class="tech-icons">
+                    <i class="fas fa-tools tech-icon" title="En développement"></i>
+                </div>
                 <p>En cours de développement.</p>
             </div>
         </div>
@@ -131,14 +162,35 @@
 </section>
 
 <section id="contact">
-    <h2>Contact</h2>
-    <p>Envie de collaborer ? Envoie-moi un message !</p>
-    <form action="mailto:info.aristil.jackson@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="nom" placeholder="Nom" required />
-        <input type="email" name="email" placeholder="Email" required />
-        <textarea name="message" placeholder="Message" required></textarea>
-        <button type="submit">Envoyer</button>
-    </form>
+    <div class="contact-container">
+        <div class="contact-header">
+            <h2>Me Contacter</h2>
+            <p>N'hésitez pas à me contacter pour toute question ou opportunité de collaboration.</p>
+        </div>
+        
+        <div class="contact-info">
+            <div class="info-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>info.aristil.jackson@gmail.com</p>
+                <a href="mailto:info.aristil.jackson@gmail.com" class="contact-link">Envoyer un email</a>
+            </div>
+            
+            <div class="info-card">
+                <i class="fas fa-phone"></i>
+                <h3>Téléphone</h3>
+                <p>+33 6 16 50 07 71</p>
+                <a href="tel:+33616500771" class="contact-link">Appeler</a>
+            </div>
+            
+            <div class="info-card">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <p>Profil LinkedIn</p>
+                <a href="https://www.linkedin.com/in/jackson-aristil-9a6b6b1b4/" target="_blank" class="contact-link">Voir le profil</a>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>
