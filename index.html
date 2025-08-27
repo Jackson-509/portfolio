@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <script src="https://cdn.counter.dev/script.js" data-id="034e3424-5230-4a01-b257-65927fbd9c23" data-utcoffset="2"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="header-left">
+            <!-- Contenu gauche optionnel -->
+        </div>
+        
+        <nav class="header-center">
+            <ul>
+                <li><a href="CV_Gestionnaire_de_données_Jackson_Aristil_.pdf" target="_blank" rel="noopener noreferrer">📄 CV</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#projets">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-right">
+            <a href="https://www.linkedin.com/in/jackson-aristil" target="_blank" rel="noopener noreferrer" class="linkedin-link">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <span class="nom-utilisateur">Jackson Aristil</span>
+            <img src="image_source_portfolio/Jackson_photo_profil.png" alt="Photo de profil" class="photo-profil">
+        </div>
+    </div>
+</header>
+
+<section id="accueil">
+    <div class="wave">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="content">
+        <div class="message-discret-accueil">Site créé en langage HTML + CSS + Js par moi !</div>
+        <h1>Bienvenue</h1>
+        <p>Je suis un passionné de data, orienté solutions et curieux par nature.</p>
+        <button onclick="document.getElementById('competences').scrollIntoView({behavior: 'smooth'});">Voir mes compétences</button>
+    </div>
+</section>
+
+<section id="competences">
+    <h2>Compétences</h2>
+    <p>Voici les outils et technologies que je maîtrise :</p>
+    <div class="competence-bubbles">
+        <span class="bubble excel"><i class="fas fa-file-excel"></i> Excel</span>
+        <span class="bubble powerbi"><i class="fas fa-chart-line"></i> Power BI</span>
+        <span class="bubble sql"><i class="fas fa-database"></i> SQL</span>
+        <span class="bubble python"><i class="fab fa-python"></i> Python</span>
+        <span class="bubble cleaning"><i class="fas fa-broom"></i> Nettoyage</span>
+        <span class="bubble reporting"><i class="fas fa-robot"></i> Automatisation</span>
+        <span class="bubble github"><i class="fab fa-github"></i> GitHub</span>
+        <span class="bubble grey"><i class="fas fa-brain"></i> IA</span>
+        <span class="bubble html-css"><i class="fab fa-html5"></i> <i class="fab fa-css3-alt"></i> HTML & CSS</span>
+    </div>
+</section>
+
+<section id="projets">
+    <h2>Mes Projets</h2>
+    <div class="projets-container">
+
+        <!-- Projet 1 : SIRETisation -->
+        <div class="projet" id="projet-siretisation">
+            <img
+                src="image_source_portfolio/Python_excel_dashboard.png"
+                alt="Aperçu du projet SIRETisation"
+                onclick="openCarousel('modal-siretisation')"
+                style="cursor: pointer;"
+            />
+            <div class="projet-info">
+                <h3>SIRETisation automatisée (API INSEE)</h3>
+                <div class="tech-icons">
+                    <i class="fab fa-python tech-icon python" title="Python"></i>
+                    <i class="fas fa-file-excel tech-icon excel" title="Excel"></i>
+                    <i class="fas fa-database tech-icon sql" title="API INSEE"></i>
+                </div>
+                <p>Nettoyage et enrichissement automatique d'une base client via l'API INSEE. Double version Python ou Excel pour fiabiliser les adresses.</p>
+            </div>
+        </div>
+
+        <!-- Projet 2 : Relance commandes (image red_shirt + carrousel) -->
+        <div class="projet" id="projet-relance">
+            <img
+                src="image_source_portfolio/red_shirt.png"
+                alt="Aperçu de la relance commandes"
+                onclick="openCarousel('modal-relance')"
+                style="cursor: pointer;"
+            />
+            <div class="projet-info">
+                <h3>Relance commandes semi-automatisée ou automatisée (Excel VBA + Outlook)</h3>
+                <div class="tech-icons">
+                    <i class="fas fa-file-excel tech-icon excel" title="Excel VBA"></i>
+                    <i class="fas fa-envelope tech-icon outlook" title="Outlook"></i>
+                    <i class="fas fa-robot tech-icon vba" title="Automatisation"></i>
+                </div>
+                <p>Un clic dans Excel pour générer un email de relance avec pièce jointe. Un outil simple et puissant qui fait gagner un temps fou aux équipes ADV.</p>
+            </div>
+        </div>
+
+        <!-- Projet 3 : Suivi boîte mail générique -->
+        <div class="projet" id="projet-bi">
+            <img
+                src="image_source_portfolio/Power_BI_Dashboard_1.png"
+                alt="Dashboard de suivi de boîte mail avec Power BI et Outlook"
+                onclick="openCarousel('modal-carousel')"
+                style="cursor: pointer;"
+            />
+            <div class="projet-info">
+                <h3>Suivi boîte mail générique (Power Query + Power BI)</h3>
+                <div class="tech-icons">
+                    <i class="fas fa-chart-line tech-icon powerbi" title="Power BI"></i>
+                    <i class="fas fa-file-excel tech-icon excel" title="Power Query"></i>
+                    <i class="fas fa-envelope tech-icon outlook" title="Outlook"></i>
+                </div>
+                <p>Suivi temps réel des mails reçus/traités via un tableau de bord connecté à Outlook. Typologie des demandes, charge de travail et qualité de service en un clin d'œil.</p>
+            </div>
+        </div>
+
+        <!-- Projet 4 : Détection des adresses sur bons de commande -->
+        <div class="projet" id="projet-adv">
+            <img
+                src="image_source_portfolio/Power_bi_dashboard_2.png"
+                alt="Aperçu de l'automatisation des tâches assistantes ADV"
+            />
+            <div class="projet-info">
+                <h3>Smart Address Extractor</h3>
+                <div class="tech-icons">
+                    <i class="fab fa-python tech-icon python" title="Python"></i>
+                    <i class="fas fa-file-excel tech-icon excel" title="Excel"></i>
+                    <i class="fas fa-brain tech-icon ai" title="Intelligence Artificielle"></i>
+                </div>
+                <p>Solution d'automatisation qui identifie et extrait les adresses sur des documents entrants (courriers, formulaires, scans), pour accélérer le traitement, fiabiliser les données et réduire les tâches manuelles.</p>
+            </div>
+        </div>
+
+                <!-- Projet 5 : Automatisation tâches assistantes ADV -->
+        <div class="projet disabled" id="projet-adv">
+            <img
+                src="image_source_portfolio/Power_bi_dashboard_2.png"
+                alt="Aperçu de l'automatisation des tâches assistantes ADV"
+            />
+            <div class="projet-info">
+                <h3>Automatisation tâches assistantes ADV</h3>
+                <div class="tech-icons">
+                    <i class="fas fa-tools tech-icon" title="En développement"></i>
+                </div>
+                <p>En cours de développement.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <div class="contact-container">
+        <div class="contact-header">
+            <h2>Me Contacter</h2>
+            <p>N'hésitez pas à me contacter pour toute question ou opportunité de collaboration.</p>
+        </div>
+        
+        <div class="contact-info">
+            <div class="info-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>info.aristil.jackson@gmail.com</p>
+                <a href="mailto:info.aristil.jackson@gmail.com" class="contact-link">Envoyer un email</a>
+            </div>
+            
+            <div class="info-card">
+                <i class="fas fa-phone"></i>
+                <h3>Téléphone</h3>
+                <p>+33 7 81 83 59 76</p>
+                <a href="tel:+33616500771" class="contact-link">Appeler</a>
+            </div>
+            
+            <div class="info-card">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <p>Profil LinkedIn</p>
+                <a href="https://www.linkedin.com/in/jackson-aristil" target="_blank" class="contact-link">Voir le profil</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Mon Portfolio - Tous droits réservés.</p>
+</footer>
+
+<!-- Modale SIRETisation -->
+<div id="modal-siretisation" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="carousel-images">
+            <video class="carousel-img" controls>
+                <source src="image_source_portfolio/base-tiers-fiabilisation_0I19UhVb.mp4" type="video/mp4" />
+                Ton navigateur ne supporte pas la vidéo HTML5.
+            </video>
+            <img src="image_source_portfolio/Powerbi_scoring_client.PNG" class="carousel-img active" alt="Capture 1 SIRET" />
+        </div>
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+</div>
+
+<!-- Modale Relance commandes -->
+<div id="modal-relance" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="carousel-images">
+            <!-- Élément vidéo -->
+            <video class="carousel-img" controls>
+                <source src="image_source_portfolio/0519-fdyvury7_UwxDF9mw.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+
+            <!-- Élément image -->
+            <img src="image_source_portfolio/dashboard_relance.png" class="carousel-img" alt="Relance capture 2" />
+        </div>
+
+        <!-- Boutons de navigation -->
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+</div>
+
+
+<!-- Modale Suivi boîte mail générique -->
+<div id="modal-carousel" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="carousel-images">
+            <img src="image_source_portfolio/power bi.png" class="carousel-img active" alt="Capture 1" />
+            <img src="image_source_portfolio/details_assitantes.png" class="carousel-img" alt="Capture 2" />
+        </div>
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
