@@ -7,8 +7,27 @@
     <title>Mon Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JMF67CWQJV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    </script>
 </head>
 <body>
+<div class="background-container">
+    <span class="bubble-background"></span>
+    <span class="bubble-background"></span>
+    <span class="bubble-background"></span>
+    <span class="bubble-background"></span>
+    <span class="bubble-background"></span>
+    <span class="bubble-background"></span>
+    <span class="bubble-background"></span>
+    <span class="bubble-background"></span>
+    <span class="bubble-background"></span>
+    <span class="bubble-background"></span>
+</div>
 
 <header>
     <div class="header-container">
@@ -18,7 +37,7 @@
         
         <nav class="header-center">
             <ul>
-                <li><a href="CV_Gestionnaire_de_données_Jackson_Aristil_.pdf" target="_blank" rel="noopener noreferrer">📄 CV</a></li>
+                <li><a href="Gestionnaire_de_données_ADV.pdf" target="_blank" rel="noopener noreferrer">📄 CV</a></li>
                 <li><a href="#competences">Compétences</a></li>
                 <li><a href="#projets">Projets</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -29,35 +48,42 @@
             <a href="https://www.linkedin.com/in/jackson-aristil" target="_blank" rel="noopener noreferrer" class="linkedin-link">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <span class="nom-utilisateur">Jackson Aristil</span>
+                        <span class="nom-utilisateur">Jackson Aristil</span>
             <img src="image_source_portfolio/Jackson_photo_profil.png" alt="Photo de profil" class="photo-profil">
         </div>
+        <div class="burger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
     </div>
+    <nav class="mobile-nav">
+        <ul>
+            <li><a href="Gestionnaire_de_données_ADV.pdf" target="_blank" rel="noopener noreferrer">📄 CV</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 </header>
 
-<section id="accueil">
-    <div class="wave">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-    <div class="content">
-        <div class="message-discret-accueil">Site créé en langage HTML + CSS + Js par moi !</div>
-        <h1>Bienvenue</h1>
-        <p>Je suis un passionné de data, orienté solutions et curieux par nature.</p>
-        <button onclick="document.getElementById('competences').scrollIntoView({behavior: 'smooth'});">Voir mes compétences</button>
-    </div>
+
+
+<section id="about" style="padding-bottom: 0px;">
+    <h2 style="margin-bottom: 30px;">À propos</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+        +8 ans d'expérience. Profil hybride : expertise ADV (suivi commandes, litiges, relation client) et analyse de données (Excel/VBA, SQL, Power BI) pour optimiser les processus et piloter la performance.
+        <br><br>
+        <em>Créateur de ce site.</em>
+    </p>
 </section>
 
 <section id="competences">
     <h2>Compétences</h2>
-    <p>Voici les outils et technologies que je maîtrise :</p>
     <div class="competence-bubbles">
         <span class="bubble excel"><i class="fas fa-file-excel"></i> Excel</span>
         <span class="bubble powerbi"><i class="fas fa-chart-line"></i> Power BI</span>
         <span class="bubble sql"><i class="fas fa-database"></i> SQL</span>
-        <span class="bubble python"><i class="fab fa-python"></i> Python</span>
-        <span class="bubble cleaning"><i class="fas fa-broom"></i> Nettoyage</span>
+        <span class="bubble python"><i class="fab fa-python"></i> Python base</span>
+        <span class="bubble cleaning"><i class="fas fa-broom"></i> Nettoyage BDD</span>
         <span class="bubble reporting"><i class="fas fa-robot"></i> Automatisation</span>
         <span class="bubble github"><i class="fab fa-github"></i> GitHub</span>
         <span class="bubble grey"><i class="fas fa-brain"></i> IA</span>
@@ -161,37 +187,54 @@
     </div>
 </section>
 
+
+
 <section id="contact">
-    <div class="contact-container">
-        <div class="contact-header">
-            <h2>Me Contacter</h2>
-            <p>N'hésitez pas à me contacter pour toute question ou opportunité de collaboration.</p>
-        </div>
-        
-        <div class="contact-info">
-            <div class="info-card">
+    <h2>Me Contacter</h2>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="chat-avatar">
                 <i class="fas fa-envelope"></i>
-                <h3>Email</h3>
-                <p>info.aristil.jackson@gmail.com</p>
-                <a href="mailto:info.aristil.jackson@gmail.com" class="contact-link">Envoyer un email</a>
             </div>
-            
-            <div class="info-card">
-                <i class="fas fa-phone"></i>
-                <h3>Téléphone</h3>
-                <p>+33 7 81 83 59 76</p>
-                <a href="tel:+33616500771" class="contact-link">Appeler</a>
+            <div class="chat-identity">
+                <h3>Contactez-moi</h3>
+                <p>Laissez-moi un message</p>
             </div>
-            
-            <div class="info-card">
-                <i class="fab fa-linkedin"></i>
-                <h3>LinkedIn</h3>
-                <p>Profil LinkedIn</p>
-                <a href="https://www.linkedin.com/in/jackson-aristil" target="_blank" class="contact-link">Voir le profil</a>
-            </div>
+        </div>
+        <div class="chat-body">
+            <button id="open-contact-form-btn">Cliquez ici pour commencer</button>
+            <form class="contact-form" action="https://formsubmit.co/info.aristil.jackson@gmail.com" method="POST">
+    <input type="hidden" name="_next" value="https://jackson-509.github.io/portfolio/">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="send-button">Envoyer</button>
+            </form>
         </div>
     </div>
 </section>
+
+<!-- Cookie Overlay -->
+<div id="cookie-overlay"></div>
+
+<!-- Cookie Banner -->
+<div id="cookie-banner">
+    <p>Ce site est comme un cookie : il a besoin de votre permission pour être délicieux (et fonctionnel). On peut continuer ?</p>
+    <p><a href="mentions-legales.html" target="_blank" id="legal-button">Mentions légales</a></p>
+    <div class="cookie-buttons">
+        <button id="accept-cookies">Accepter</button>
+        <button id="reject-cookies">Refuser</button>
+    </div>
+</div>
 
 <footer>
     <p>&copy; 2025 Mon Portfolio - Tous droits réservés.</p>
